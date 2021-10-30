@@ -16,15 +16,13 @@ if(username) {
     password.addEventListener('input', function() {
         passwordIcon.classList.add('password-active');
     })
-}
 
-if(username.value) {
-    usernameIcon.classList.add('username-active');
+    if(username.value) {
+        usernameIcon.classList.add('username-active');
+    }
 }
 
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
-
-// gsap.from('.form-signin', { duration: 1.75, x: '-100', opacity: 0 });

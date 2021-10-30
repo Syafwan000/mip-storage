@@ -34,16 +34,16 @@ if(r_name) {
     r_con_password.addEventListener('input', function() {
         r_con_passwordIcon.classList.add('r-con-password-active');
     })
-}
-
-if(r_name.value) {
-    r_nameIcon.classList.add('r-name-active');
-}
-
-if(r_username.value) {
-    r_usernameIcon.classList.add('r-username-active');
-}
-
-if(r_email.value) {
-    r_emailIcon.classList.add('r-email-active');
+    
+    if(r_name.value) {
+        r_nameIcon.classList.add('r-name-active');
+    }
+    
+    if(r_username.value) {
+        r_usernameIcon.classList.add('r-username-active');
+    }
+    
+    if(r_email.value) {
+        r_emailIcon.classList.add('r-email-active');
+    }
 }
