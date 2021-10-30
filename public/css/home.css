@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600&display=swap');
+
+:root {
+    --primary-color: #272341;
+    --secondary-color: #F8F9FA;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a.navbar-brand {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
+    color: var(--primary-color) !important;
+}
+
+a.nav-link.active.login {
+    font-family: 'Baloo 2', cursive;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color) !important;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.6s;
+}
+
+a.nav-link.active.login:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color) !important;
+}
+
+a.nav-link.active.media i {
+    font-size: 20px;
+}
+
+span#socmed {
+    display: none;
+    font-family: 'Baloo 2', cursive;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+button.navbar-toggler {
+    padding: 8px 8px;
+    border: none;
+}
+
+.navbar-light .navbar-toggler {
+    color: var(--secondary-color);
+}
+
+button.navbar-toggler i {
+    color: var(--primary-color);
+}
+
+#hero {
+    position: absolute;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #F8F9FA;
+    font-weight: 400;
+    color: var(--primary-color);
+    font-family: 'Baloo 2', cursive;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+p {
+    line-height: 33px;
+}
+
+img {
+    animation: floatY 4s ease-in-out infinite;
+}
+
+a.get-started {
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 6px 18px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+@keyframes floatY {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-15px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@media (max-width: 1200px) {
+    img {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    a.nav-link.active.login {
+        text-align: center;
+    }
+
+    a.nav-link.active.media {
+        text-align: center;
+    }
+
+    span#socmed {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600&display=swap');
+
+:root {
+  --primary-color: #272341;
+  --secondary-color: #F8F9FA;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+
+/* /////////// */
+/* Login */
+/* /////////// */
+
+a.title {
+  font-family: 'Permanent Marker', cursive;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+h4 {
+  font-family: 'Baloo 2', cursive;
+}
+
+.form-signin {
+  padding: 20px;
+}
+
+span#basic-addon1, span#basic-addon2 {
+  width: auto;
+  height: 50px;
+}
+
+span#basic-addon1 i, span#basic-addon2 i {
+  color: var(--primary-color);
+}
+
+span#basic-addon1.username-active {
+  background-color: var(--primary-color);
+}
+
+span#basic-addon2.password-active {
+  background-color: var(--primary-color);
+}
+
+span#basic-addon1.username-active i {
+  color: var(--secondary-color);
+}
+
+span#basic-addon2.password-active i {
+  color: var(--secondary-color);
+}
+
+.form-signin input[type="text"], span#basic-addon1 {
+  border: 1px solid var(--primary-color);
+}
+
+.form-signin input[type="password"], span#basic-addon2 {
+  border: 1px solid var(--primary-color);
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+  font-family: 'Baloo 2', cursive;
+}
+
+button.btn-lg {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: 'Baloo 2', cursive;
+  letter-spacing: 2px;
+}
+
+button.btn-lg:hover {
+  color: var(--secondary-color);
+}
+
+a.register {
+  border-bottom: 2px solid var(--primary-color);
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Baloo 2', cursive;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+a.back {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  padding: 6px 8px;
+  border-radius: .25rem;
+}
+
+@media (max-width: 992px) {
+  .alert.alert-danger {
+    font-size: 14px;
+  }
+}
+
+/* /////////// */
+/* Register */
+/* /////////// */
+
+input[type="text"].is-invalid,
+input[type="password"].is-invalid,
+input[type="email"].is-invalid {
+  border: 1px solid var(--primary-color);
+  border-top-right-radius: .25rem !important;
+  border-bottom-right-radius: .25rem !important;
+}
+
+input[type="text"].is-invalid:focus,
+input[type="password"].is-invalid:focus,
+input[type="email"].is-invalid:focus {
+  border: 1px solid var(--primary-color);
+}
+
+input[type="email"] {
+  border: 1px solid var(--primary-color);
+}
+
+input[type="email"]:focus {
+  border: 1px solid var(--primary-color);
+}
+
+span#basic-addon-r1, span#basic-addon-r2,
+span#basic-addon-r3, span#basic-addon-r4,
+span#basic-addon-r5 {
+  width: auto;
+  height: auto;
+  border: 1px solid var(--primary-color);
+}
+
+span#basic-addon-r1 i, span#basic-addon-r2 i,
+span#basic-addon-r3 i, span#basic-addon-r4 i,
+span#basic-addon-r5 i {
+  color: var(--primary-color);
+}
+
+span#basic-addon-r1.r-name-active {
+  background-color: var(--primary-color);
+}
+
+span#basic-addon-r2.r-username-active {
+  background-color: var(--primary-color);
+}
+
+span#basic-addon-r3.r-email-active {
+  background-color: var(--primary-color);
+}
+
+span#basic-addon-r4.r-password-active {
+  background-color: var(--primary-color);
+}
+
+span#basic-addon-r5.r-con-password-active {
+  background-color: var(--primary-color);
+}
+
+span#basic-addon-r1.r-name-active i {
+  color: var(--secondary-color);
+}
+
+span#basic-addon-r2.r-username-active i {
+  color: var(--secondary-color);
+}
+
+span#basic-addon-r3.r-email-active i {
+  color: var(--secondary-color);
+}
+
+span#basic-addon-r4.r-password-active i {
+  color: var(--secondary-color);
+}
+
+span#basic-addon-r5.r-con-password-active i {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 992px) {
+  .invalid-feedback {
+    font-size: 12px !important;
+  }
+}
