@@ -157,7 +157,55 @@ p.date, p.time {
   font-size: 16px;
 }
 
-/* Responsive */
+.card.sub-card {
+  background: none !important;
+  border: none;
+  background-color: var(--primary-color) !important;
+  color: #FFFFFF;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 35px;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 3px;
+  transition: 1s;
+}
+
+.card.sub-card:hover {
+  background-color: #FFFFFF !important;
+  color: var(--primary-color) !important;
+  border: 3px dashed var(--primary-color);
+}
+
+.card.sub-card .card-title {
+  margin-bottom: 10px;
+}
+
+.card.sub-card .card-text {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.card.sub-card.one {
+  margin-right: 0;
+}
+
+.card.sub-card.two {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.card.sub-card.three {
+  margin-left: 0;
+}
+
+span#icon {
+  font-size: 25px;
+}
+
+p.h4 {
+  margin-bottom: 25px !important;
+  border-bottom: 2px solid var(--primary-color);
+  display: inline-block;
+}
 
 @media (max-width: 1200px) {
   h2.card-title {
@@ -179,6 +227,23 @@ p.date, p.time {
   p.date, p.time {
     font-size: 15px;
   }
+
+  .card-body {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+  }
+
+  .card.sub-card .card-title {
+    font-size: 16px;
+  }
+
+  .card.sub-card .card-text {
+    font-size: 16px;
+  }
+
+  span#icon {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -191,10 +256,42 @@ p.date, p.time {
   nav {
     top: 0 !important;
   }
+
+  .card.bg-dark {
+    margin-top: 25px !important;
+  }
+
+  .card.sub-card.one {
+    margin-right: 16px;
+  }
+  
+  .card.sub-card.two {
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+  
+  .card.sub-card.three {
+    margin-left: 16px;
+    margin-bottom: 25px;
+  }
+
+  .card.sub-card .card-title {
+    font-size: 18px;
+  }
+
+  .card.sub-card .card-text {
+    font-size: 18px;
+  }
+
+  span#icon {
+    font-size: 25px;
+  }
 }
 
 @media (max-width: 620px) {
-  .card {
+  .card.bg-dark {
     display: none;
   }
 

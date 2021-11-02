@@ -73,4 +73,37 @@
         </div>
     </div>
     @endif
+
+    <div class="container text-center title">
+        <p class="h4">Total Semua Data</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 text-center">
+        <div class="col">
+          <div class="card sub-card one">
+            <div class="card-body p-5">
+              <h5 class="card-title">User</h5>
+              <span id="icon"><i class="bi bi-person-fill"></i></span>
+              <p class="card-text">0</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card sub-card two">
+            <div class="card-body p-5">
+              <h5 class="card-title">Barang</h5>
+              <span id="icon"><i class="bi bi-box-seam"></i></span>
+              <p class="card-text">0</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card sub-card three">
+            <div class="card-body p-5">
+              <h5 class="card-title">Kategori</h5>
+              <span id="icon"><i class="bi bi-tags-fill"></i></span>
+              <p class="card-text">0</p>
+            </div>
+          </div>
+        </div>
 @endsection
