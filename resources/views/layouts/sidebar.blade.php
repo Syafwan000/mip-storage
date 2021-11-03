@@ -5,13 +5,13 @@
       </h6>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link {{ ($active === "dashboard") ? 'active' : '' }}" aria-current="page" href="/dashboard">
+          <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
             <span data-feather="home"></span>
             Dashboard
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ ($active === "items") ? 'active' : '' }}" aria-current="page" href="/dashboard/items">
+          <a class="nav-link {{ Request::is('dashboard/items*') ? 'active' : '' }}" aria-current="page" href="/dashboard/items">
             <span data-feather="package"></span>
             Items
           </a>
@@ -22,13 +22,13 @@
       </h6>
       <ul class="nav flex-column mb-2">
         <li class="nav-item">
-          <a class="nav-link {{ ($active === "profile") ? 'active' : '' }}" href="/dashboard/profile">
+          <a class="nav-link {{ Request::is('dashboard/profile') ? 'active' : '' }}" href="/dashboard/profile">
             <span data-feather="user"></span>
             Profile
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ ($active === "settings") ? 'active' : '' }}" href="/dashboard/settings">
+          <a class="nav-link {{ Request::is('dashboard/settings') ? 'active' : '' }}" href="/dashboard/settings">
             <span data-feather="sliders"></span>
             Settings
           </a>

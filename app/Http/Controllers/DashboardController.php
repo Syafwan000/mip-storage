@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Items;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -37,7 +40,10 @@ class DashboardController extends Controller
         return view('dashboard.dashboard', [
             'title' => 'Dashboard',
             'active' => 'dashboard',
-            'time' => $waktu
+            'time' => $waktu,
+            'users' => count(User::all()),
+            'items' => count(Items::all()),
+            'categories' => count(Category::all())
         ]);
     }
 
@@ -54,14 +60,6 @@ class DashboardController extends Controller
         return view('dashboard.settings', [
             'title' => 'Setting',
             'active' => 'settings'
-        ]);
-    }
-
-    public function show_items()
-    {
-        return view('dashboard.items', [
-            'title' => 'Items',
-            'active' => 'items'
         ]);
     }
 }

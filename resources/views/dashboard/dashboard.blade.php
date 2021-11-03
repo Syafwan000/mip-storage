@@ -84,7 +84,7 @@
             <div class="card-body p-5">
               <h5 class="card-title">User</h5>
               <span id="icon"><i class="bi bi-person-fill"></i></span>
-              <p class="card-text">0</p>
+              <p class="card-text">{{ $users }}</p>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
             <div class="card-body p-5">
               <h5 class="card-title">Barang</h5>
               <span id="icon"><i class="bi bi-box-seam"></i></span>
-              <p class="card-text">0</p>
+              <p class="card-text">{{ $items }}</p>
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@
             <div class="card-body p-5">
               <h5 class="card-title">Kategori</h5>
               <span id="icon"><i class="bi bi-tags-fill"></i></span>
-              <p class="card-text">0</p>
+              <p class="card-text">{{ $categories }}</p>
             </div>
           </div>
         </div>

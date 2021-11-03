@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardItemsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-Route::get('/dashboard/items', [DashboardController::class, 'show_items'])->middleware('auth');
 Route::get('/dashboard/profile', [DashboardController::class, 'show_profile'])->middleware('auth');
 Route::get('/dashboard/settings', [DashboardController::class, 'show_settings'])->middleware('auth');
+
+Route::resource('/dashboard/items', DashboardItemsController::class);
