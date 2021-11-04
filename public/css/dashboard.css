@@ -213,6 +213,11 @@ p.h4 {
 
 /* Items */
 
+.row.p-3 {
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
+}
+
 a.btn.add-items {
   background: var(--primary-color);
   color: var(--secondary-color);
@@ -223,6 +228,43 @@ a.btn.export {
   background: #1C6C40;
   color: var(--secondary-color);
   padding: 10px;
+}
+
+table {
+  margin-bottom: 30px !important;
+  font-weight: 500;
+}
+
+table thead {
+  background: var(--primary-color) !important;
+  border: none !important;
+  color: #FFFFFF;
+}
+
+th.no {
+  border-top-left-radius: .25rem;
+}
+
+th.aksi {
+  border-top-right-radius: .25rem;
+}
+
+.badge.bg-warning {
+  color: #000;
+}
+
+.badge.bg-warning, .badge.bg-danger {
+  text-decoration: none !important;
+  font-size: 12px !important;
+  padding: 10px;
+}
+
+.badge.bg-warning:hover {
+  color: #000;
+}
+
+.badge.bg-danger:hover {
+  color: #FFFFFF;
 }
 
 @media (max-width: 1200px) {

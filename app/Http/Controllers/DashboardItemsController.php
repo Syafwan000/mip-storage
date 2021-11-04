@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Items;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class DashboardItemsController extends Controller
@@ -16,7 +17,7 @@ class DashboardItemsController extends Controller
     {
         return view('dashboard.items', [
             'title' => 'Items',
-            'items' => Items::all()
+            'items' => Items::latest()->paginate(10)
         ]);
     }
 
@@ -27,7 +28,10 @@ class DashboardItemsController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.items.create', [
+            'title' => 'Items',
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -38,7 +42,17 @@ class DashboardItemsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'price' => 'required|max:255',
+            'category_id' => 'required'
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Items::create($validatedData);
+
+        return redirect('/dashboard/items')->with('successAddItem', 'Berhasil menambahkan data barang');
     }
 
     /**
@@ -83,6 +97,8 @@ class DashboardItemsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Items::destroy($id);
+
+        return redirect('/dashboard/items')->with('success', 'Post has been deleted!');
     }
 }

@@ -33,6 +33,6 @@ class DatabaseSeeder extends Seeder
             'name' => 'Elektronik'
         ]);
 
-        Items::factory(10)->create();
+        Items::factory(20)->create();
     }
 }
