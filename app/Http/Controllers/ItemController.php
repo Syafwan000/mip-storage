@@ -6,7 +6,7 @@ use App\Models\Items;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-class DashboardItemsController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class DashboardItemsController extends Controller
     {
         return view('dashboard.items', [
             'title' => 'Items',
-            'items' => Items::latest()->paginate(10)
+            'items' => Items::latest()->paginate(15)
         ]);
     }
 
@@ -58,10 +58,10 @@ class DashboardItemsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Items  $items
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Items $items)
     {
         //
     }
@@ -69,36 +69,50 @@ class DashboardItemsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Items  $items
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.items.edit', [
+            'title' => 'Items',
+            'item' => Items::find($id),
+            'categories' => Category::all()
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Items  $items
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'price' => 'required|max:255',
+            'category_id' => 'required'
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Items::where('id', $id)->update($validatedData);
+
+        return redirect('/dashboard/items')->with('successUpdateItem', 'Data barang berhasil diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Items  $items
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         Items::destroy($id);
 
-        return redirect('/dashboard/items')->with('success', 'Post has been deleted!');
+        return redirect('/dashboard/items')->with('successDeleteItem', 'Berhasil menghapus data barang');
     }
 }

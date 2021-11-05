@@ -253,6 +253,10 @@ th.aksi {
   color: #000;
 }
 
+.badge.bg-danger {
+  border: none;
+}
+
 .badge.bg-warning, .badge.bg-danger {
   text-decoration: none !important;
   font-size: 12px !important;
@@ -265,6 +269,71 @@ th.aksi {
 
 .badge.bg-danger:hover {
   color: #FFFFFF;
+}
+
+/*  */
+
+.form-label {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nama-barang, .harga-barang, .kategori {
+  height: 50px;
+}
+
+span#basic-addon-i1 i, span#basic-addon-i2 i {
+  color: var(--primary-color);
+}
+
+input[type="text"], span#basic-addon-i1 {
+  border: 1px solid var(--primary-color);
+}
+
+input[type="number"], span#basic-addon-i2 {
+  border: 1px solid var(--primary-color);
+}
+
+span#basic-addon-i1.title-active {
+  background-color: var(--primary-color);
+}
+
+span#basic-addon-i2.price-active {
+  background-color: var(--primary-color);
+}
+
+span#basic-addon-i1.title-active i {
+  color: var(--secondary-color);
+}
+
+span#basic-addon-i2.price-active i {
+  color: var(--secondary-color);
+}
+
+input[type="text"].is-invalid,
+input[type="number"].is-invalid {
+  border: 1px solid var(--primary-color);
+  border-top-right-radius: .25rem !important;
+  border-bottom-right-radius: .25rem !important;
+}
+
+input[type="text"].is-invalid:focus,
+input[type="number"].is-invalid:focus {
+  border: 1px solid var(--primary-color);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border: 1px solid var(--primary-color);
+}
+
+select {
+  border: 1px solid var(--primary-color) !important;
+}
+
+
+a.btn.back-to-items {
+  text-align: start;
 }
 
 @media (max-width: 1200px) {

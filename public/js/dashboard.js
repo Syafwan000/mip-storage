@@ -35,3 +35,33 @@ if(time) {
       r_date.textContent = '📅' + ' ' + moment().format('LL');
   }, 1000);
 }
+
+// Form
+
+const title = document.querySelector('.nama-barang');
+const titleIcon = document.querySelector('#basic-addon-i1');
+const price = document.querySelector('.harga-barang');
+const priceIcon = document.querySelector('#basic-addon-i2');
+
+
+if(!title) {
+  console.log(null);
+}
+
+if(title) {
+  title.addEventListener('input', function() {
+    titleIcon.classList.add('title-active');
+  })
+
+  price.addEventListener('input', function() {
+    priceIcon.classList.add('price-active');
+  })
+
+  if(title.value) {
+    titleIcon.classList.add('title-active');
+  }
+
+  if(price.value) {
+    priceIcon.classList.add('price-active');
+  }
+}

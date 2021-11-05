@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DashboardItemsController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +31,4 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::get('/dashboard/profile', [DashboardController::class, 'show_profile'])->middleware('auth');
 Route::get('/dashboard/settings', [DashboardController::class, 'show_settings'])->middleware('auth');
 
-Route::resource('/dashboard/items', DashboardItemsController::class);
+Route::resource('/dashboard/items', ItemController::class);
