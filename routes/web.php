@@ -32,3 +32,5 @@ Route::get('/dashboard/profile', [DashboardController::class, 'show_profile'])->
 Route::get('/dashboard/settings', [DashboardController::class, 'show_settings'])->middleware('auth');
 
 Route::resource('/dashboard/items', ItemController::class);
+
+Route::get('/dashboard/export', [ItemController::class, 'export']);

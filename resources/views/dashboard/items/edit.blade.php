@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Edit Data Barang</h1>
+        <h1 class="h2"><i class="bi bi-bag-dash-fill"></i> Edit Data Barang</h1>
     </div>
     <form action="/dashboard/items/{{ $item->id }}" method="post" class="mt-4">
         @method('put')

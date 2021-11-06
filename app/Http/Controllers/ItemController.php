@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ItemsExport;
 use App\Models\Items;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ItemController extends Controller
 {
@@ -114,5 +116,10 @@ class ItemController extends Controller
         Items::destroy($id);
 
         return redirect('/dashboard/items')->with('successDeleteItem', 'Berhasil menghapus data barang');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ItemsExport, 'SemuaBarang.xlsx');
     }
 }

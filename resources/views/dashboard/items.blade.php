@@ -6,7 +6,7 @@
             <a class="btn add-items shadow-none" href="/dashboard/items/create"><i class="bi bi-file-earmark-plus"></i>&nbsp;&nbsp;Tambah Barang</a>
         </div>
         <div class="col-md-6 ms-auto text-end pe-0">
-            <a class="btn export shadow-none" href="#"><i class="bi bi-file-earmark-spreadsheet-fill"></i>&nbsp;&nbsp;Export</a>
+            <a class="btn export shadow-none" href="/dashboard/export"><i class="bi bi-file-earmark-spreadsheet-fill"></i>&nbsp;&nbsp;Export</a>
         </div>
     </div>
 
@@ -26,7 +26,7 @@
 
     @if(session()->has('successUpdateItem'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <i class="bi bi-bag-x-fill"></i>&nbsp;&nbsp;{{ session('successUpdateItem') }}
+        <i class="bi bi-bag-dash-fill"></i>&nbsp;&nbsp;{{ session('successUpdateItem') }}
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
