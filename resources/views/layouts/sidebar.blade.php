@@ -17,6 +17,25 @@
           </a>
         </li>
       </ul>
+      @can('admin')
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-3 mb-2 text-muted">
+        <span>Administrator</span>
+      </h6>
+      <ul class="nav flex-column mb-2">
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/admin') ? 'active' : '' }}" href="/dashboard/admin">
+            <span data-feather="user-check"></span>
+            Admin
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/kategori') ? 'active' : '' }}" href="/dashboard/kategori">
+            <span data-feather="bookmark"></span>
+            Kategori
+          </a>
+        </li>
+      </ul>
+      @endcan
       <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-3 mb-2 text-muted">
         <span>Profile</span>
       </h6>
@@ -25,12 +44,6 @@
           <a class="nav-link {{ Request::is('dashboard/profile') ? 'active' : '' }}" href="/dashboard/profile">
             <span data-feather="user"></span>
             Profile
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/settings') ? 'active' : '' }}" href="/dashboard/settings">
-            <span data-feather="sliders"></span>
-            Settings
           </a>
         </li>
         <li class="nav-item mt-3">

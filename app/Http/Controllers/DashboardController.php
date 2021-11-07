@@ -41,9 +41,9 @@ class DashboardController extends Controller
             'title' => 'Dashboard',
             'active' => 'dashboard',
             'time' => $waktu,
-            'users' => count(User::all()),
-            'items' => count(Items::all()),
-            'categories' => count(Category::all())
+            'users' => number_format(count(User::all())),
+            'items' => number_format(count(Items::all())),
+            'categories' => number_format(count(Category::all()))
         ]);
     }
 

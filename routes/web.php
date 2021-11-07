@@ -6,6 +6,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +30,10 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-Route::get('/dashboard/profile', [DashboardController::class, 'show_profile'])->middleware('auth');
-Route::get('/dashboard/settings', [DashboardController::class, 'show_settings'])->middleware('auth');
 
 Route::resource('/dashboard/items', ItemController::class);
-
 Route::get('/dashboard/export', [ItemController::class, 'export']);
+
+Route::get('/dashboard/kategori', [CategoryController::class, 'index'])->middleware('auth')->middleware('isAdmin');
+
+Route::get('/dashboard/profile', [UserController::class, 'index'])->middleware('auth');

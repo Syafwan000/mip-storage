@@ -33,6 +33,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Elektronik'
         ]);
 
-        Items::factory(20)->create();
+        Category::create([
+            'name' => 'Makanan dan Minuman'
+        ]);
+
+        Items::factory(30)->create();
     }
 }

@@ -23,7 +23,7 @@ class ItemsFactory extends Factory
     {
         return [
             'user_id' => mt_rand(1, 6),
-            'category_id' => mt_rand(1, 2),
+            'category_id' => mt_rand(1, 3),
             'title' => $this->faker->name(),
             'price' => mt_rand(5000, 10000)
         ];

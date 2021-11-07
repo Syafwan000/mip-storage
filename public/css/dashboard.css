@@ -68,6 +68,7 @@ body {
 
 header {
   background-color: var(--primary-color) !important;
+  z-index: 99999;
 }
 
 button.navbar-toggler {
@@ -161,54 +162,31 @@ p.date, p.time {
   font-size: 16px;
 }
 
-.card.sub-card {
-  background: none !important;
-  border: none;
-  background-color: var(--primary-color) !important;
-  color: #FFFFFF;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 35px;
-  border-bottom-left-radius: 35px;
-  border-bottom-right-radius: 3px;
-  transition: 1s;
+.col-sm-8 {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.card.sub-card:hover {
-  background-color: #FFFFFF !important;
-  color: var(--primary-color) !important;
-  border: 3px dashed var(--primary-color);
+.col-sm-4 {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.card.sub-card .card-title {
-  margin-bottom: 10px;
+.border-custom {
+  border-left: 1px solid var(--primary-color);
+  border-top: 1px solid var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  color: var(--secondary-color);
+  background: var(--primary-color);
 }
 
-.card.sub-card .card-text {
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-.card.sub-card.one {
-  margin-right: 0;
-}
-
-.card.sub-card.two {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.card.sub-card.three {
-  margin-left: 0;
-}
-
-span#icon {
-  font-size: 25px;
-}
-
-p.h4 {
-  margin-bottom: 25px !important;
-  border-bottom: 2px solid var(--primary-color);
-  display: inline-block;
+.border-custom-count {
+  border: 2px solid var(--primary-color);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: var(--primary-color);
 }
 
 /* Items */
@@ -271,7 +249,7 @@ th.aksi {
   color: #FFFFFF;
 }
 
-/*  */
+/* Create and Edit */
 
 .form-label {
   font-size: 15px;
@@ -348,6 +326,12 @@ a.btn.back-to-items {
   }
 }
 
+@media (max-width: 1035px) {
+  button.badge.bg-danger {
+    margin-top: 10px;
+  }
+}
+
 @media (max-width: 950px) {
   h2.card-title {
     font-size: 18px !important;
@@ -360,18 +344,6 @@ a.btn.back-to-items {
   .card-body {
     padding-right: 20px !important;
     padding-left: 20px !important;
-  }
-
-  .card.sub-card .card-title {
-    font-size: 16px;
-  }
-
-  .card.sub-card .card-text {
-    font-size: 16px;
-  }
-
-  span#icon {
-    font-size: 18px;
   }
 }
 
@@ -390,32 +362,8 @@ a.btn.back-to-items {
     margin-top: 25px !important;
   }
 
-  .card.sub-card.one {
-    margin-right: 16px;
-  }
-  
-  .card.sub-card.two {
-    margin-right: 16px;
-    margin-left: 16px;
-    margin-top: 18px;
-    margin-bottom: 18px;
-  }
-  
-  .card.sub-card.three {
-    margin-left: 16px;
-    margin-bottom: 25px;
-  }
-
-  .card.sub-card .card-title {
-    font-size: 18px;
-  }
-
-  .card.sub-card .card-text {
-    font-size: 18px;
-  }
-
-  span#icon {
-    font-size: 25px;
+  p.username {
+    display: none;
   }
 }
 
@@ -433,6 +381,18 @@ a.btn.back-to-items {
   }
 }
 
+@media (max-width: 576px) {
+  .border-custom {
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 15px;
+  }
+
+  .border-custom-count {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 15px;
+  }
+}
+
 @media (max-width: 460px) {
   h2.card-title {
     font-size: 16px !important;
@@ -447,4 +407,16 @@ a.btn.back-to-items {
   p.r_date, p.r_time {
     font-size: 12px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
 }

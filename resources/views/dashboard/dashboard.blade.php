@@ -74,36 +74,18 @@
     </div>
     @endif
 
-    <div class="container text-center title">
-        <p class="h4">Total Semua Data</p>
+    <div class="container my-3 px-3">
+      <div class="row mx-0 my-4">
+        <div class="col-sm-8 border-custom"><h4 class="p-4 m-0"><i class="bi bi-person-fill"></i>&nbsp;&nbsp;Total User</h4></div>
+        <div class="col-sm-4 border-custom-count"><h5 class="text-center p-4 m-0">{{ $users }}</h5></div>
+      </div>
+      <div class="row mx-0 my-4">
+        <div class="col-sm-8 border-custom"><h4 class="p-4 m-0"><i class="bi bi-box-seam"></i>&nbsp;&nbsp;Total Barang</h4></div>
+        <div class="col-sm-4 border-custom-count"><h5 class="text-center p-4 m-0">{{ $items }}</h5></div>
+      </div>
+      <div class="row mx-0 my-4">
+        <div class="col-sm-8 border-custom"><h4 class="p-4 m-0"><i class="bi bi-bookmarks-fill"></i>&nbsp;&nbsp;Total Kategori</h4></div>
+        <div class="col-sm-4 border-custom-count"><h5 class="text-center p-4 m-0">{{ $categories }}</h5></div>
+      </div>
     </div>
-
-    <div class="row row-cols-1 row-cols-md-3 text-center">
-        <div class="col">
-          <div class="card sub-card one">
-            <div class="card-body p-5">
-              <h5 class="card-title">User</h5>
-              <span id="icon"><i class="bi bi-person-fill"></i></span>
-              <p class="card-text">{{ $users }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card sub-card two">
-            <div class="card-body p-5">
-              <h5 class="card-title">Barang</h5>
-              <span id="icon"><i class="bi bi-box-seam"></i></span>
-              <p class="card-text">{{ $items }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card sub-card three">
-            <div class="card-body p-5">
-              <h5 class="card-title">Kategori</h5>
-              <span id="icon"><i class="bi bi-tags-fill"></i></span>
-              <p class="card-text">{{ $categories }}</p>
-            </div>
-          </div>
-        </div>
 @endsection
