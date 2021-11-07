@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Profile</h1>
+        <h1 class="h2"><i class="bi bi-person-fill"></i> Profile</h1>
     </div>
 
     <label class="form-label">Nama Lengkap</label>
@@ -19,10 +19,10 @@
     </div>
     <label class="form-label">Status Admin</label>
     <div class="input-group mb-3">
-        <p>{{ ($user->isAdmin == 0) ? 'Bukan Admin' : 'Admin' }}</p>
-    </div>
-    <label class="form-label">Password</label>
-    <div class="input-group mb-3">
-        <a href="#" class="btn btn-primary">Ganti Password</a>
+        @if($user->isAdmin == 0)
+            <p class="not-admin">{{ ($user->isAdmin == 0) ? 'Bukan Admin' : 'Admin' }}</p>
+        @else
+            <p class="admin">{{ ($user->isAdmin == 0) ? 'Bukan Admin' : 'Admin' }}</p>
+        @endif
     </div>
 @endsection

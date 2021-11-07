@@ -12,25 +12,26 @@
 
     @if(session()->has('successAddItem'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <i class="bi bi-bag-plus-fill"></i>&nbsp;&nbsp;{{ session('successAddItem') }}
+        <span class="notification"><i class="bi bi-bag-plus-fill"></i>&nbsp;&nbsp;{{ session('successAddItem') }}</span>
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
 
     @if(session()->has('successDeleteItem'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <i class="bi bi-bag-x-fill"></i>&nbsp;&nbsp;{{ session('successDeleteItem') }}
+        <span class="notification"><i class="bi bi-bag-x-fill"></i>&nbsp;&nbsp;{{ session('successDeleteItem') }}</span>
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
 
     @if(session()->has('successUpdateItem'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <i class="bi bi-bag-dash-fill"></i>&nbsp;&nbsp;{{ session('successUpdateItem') }}
+        <span class="notification"><i class="bi bi-bag-dash-fill"></i>&nbsp;&nbsp;{{ session('successUpdateItem') }}</span>
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
 
+    @if($items->count())
     <table class="table mx-auto text-center table-striped table-hover">
         <thead>
           <tr>
@@ -52,13 +53,16 @@
             <td>{{ $item->created_at }}</td>
             <td>
               <a href="/dashboard/items/{{ $item->id }}/edit" class="badge bg-warning shadow-none"><i class="bi bi-pencil-square"></i> Edit</a>
-                <button class="badge bg-danger shadow-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                <button class="badge bg-danger shadow-none" data-bs-toggle="modal" data-bs-target="#ModalAddItem{{ $item->id }}">
                   <i class="bi bi-trash-fill"></i>
                   Hapus
                 </button>
             </td>
           </tr>
-          <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <form action="/dashboard/items/{{ $item->id }}" method="post">
+            @method('delete')
+            @csrf
+          <div class="modal fade" id="ModalAddItem{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
@@ -66,22 +70,26 @@
                   <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  Apakah anda yakin ingin menghapusnya ?
+                  <h6 class="mb-3">Apakah anda yakin ingin menghapus data berikut ?</h6>
+                  <p class="m-0"><span class="modal-detail">Nama Barang :</span> {{ $item->title }}</p>
+                  <p class="m-0"><span class="modal-detail">Harga Barang :</span> Rp. {{ number_format($item->price) }}</p>
+                  <p class="m-0"><span class="modal-detail">Kategori :</span> {{ $item->category->name }}</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary shadow-none" data-bs-dismiss="modal">Tidak</button>
-                  <form action="/dashboard/items/{{ $item->id }}" method="post">
-                    @method('delete')
-                    @csrf
                     <button class="btn btn-danger shadow-none">Hapus</button>
-                  </form>
                 </div>
               </div>
             </div>
           </div>
-          @endforeach
+        </form>
+        @endforeach
         </tbody>
       </table>
+
+      @else
+        <p class="text-center fs-4 none"><i class="bi bi-bar-chart-steps"></i>&nbsp;&nbsp;Tidak Ada Data</p>
+      @endif
 
       <div class="d-flex justify-content-end">
         {{ $items->links() }}

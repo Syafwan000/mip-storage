@@ -231,11 +231,11 @@ th.aksi {
   color: #000;
 }
 
-.badge.bg-danger {
+.badge.bg-danger, .badge.bg-success {
   border: none;
 }
 
-.badge.bg-warning, .badge.bg-danger {
+.badge.bg-warning, .badge.bg-danger, .badge.bg-success {
   text-decoration: none !important;
   font-size: 12px !important;
   padding: 10px;
@@ -312,6 +312,37 @@ select {
 
 a.btn.back-to-items {
   text-align: start;
+}
+
+span.notification {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+span.modal-detail {
+  font-weight: 500;
+}
+
+.none {
+  color: #aaa;
+}
+
+/* Profile */
+
+p.not-admin {
+  color: #FFFFFF;
+  background-color: #DC3545;
+  padding: 8px;
+  border-radius: .25rem;
+  font-weight: 500;
+}
+
+p.admin {
+  color: #FFFFFF;
+  background-color: #198754;
+  padding: 8px;
+  border-radius: .25rem;
+  font-weight: 500;
 }
 
 @media (max-width: 1200px) {

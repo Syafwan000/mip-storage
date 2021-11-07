@@ -7,7 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +34,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::resource('/dashboard/items', ItemController::class);
 Route::get('/dashboard/export', [ItemController::class, 'export']);
 
-Route::get('/dashboard/kategori', [CategoryController::class, 'index'])->middleware('auth')->middleware('isAdmin');
+Route::resource('/dashboard/admin', AdminController::class)->middleware('auth')->middleware('isAdmin');
 
 Route::get('/dashboard/profile', [UserController::class, 'index'])->middleware('auth');
