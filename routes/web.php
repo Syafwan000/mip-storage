@@ -31,8 +31,8 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-Route::resource('/dashboard/items', ItemController::class);
-Route::get('/dashboard/export', [ItemController::class, 'export']);
+Route::resource('/dashboard/items', ItemController::class)->middleware('auth');
+Route::get('/dashboard/export', [ItemController::class, 'export'])->middleware('auth');
 
 Route::resource('/dashboard/admin', AdminController::class)->middleware('auth')->middleware('isAdmin');
 
