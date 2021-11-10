@@ -34,6 +34,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::resource('/dashboard/items', ItemController::class)->middleware('auth');
 Route::get('/dashboard/export', [ItemController::class, 'export'])->middleware('auth');
 
-Route::resource('/dashboard/admin', AdminController::class)->middleware('auth')->middleware('isAdmin');
+Route::resource('/dashboard/admin', AdminController::class)->middleware('auth')->middleware('isOwner');
 
 Route::get('/dashboard/profile', [UserController::class, 'index'])->middleware('auth');

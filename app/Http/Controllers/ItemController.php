@@ -120,6 +120,6 @@ class ItemController extends Controller
 
     public function export()
     {
-        return Excel::download(new ItemsExport, 'SemuaBarang.xlsx');
+        return Excel::download(new ItemsExport, 'semua-barang.xlsx');
     }
 }

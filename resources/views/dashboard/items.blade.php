@@ -2,12 +2,18 @@
 
 @section('container')
     <div class="row p-3">
+        @if(auth()->user()->isAdmin == 1 || auth()->user()->isOwner == 1)
         <div class="col-md-6 ps-0">
             <a class="btn add-items shadow-none" href="/dashboard/items/create"><i class="bi bi-file-earmark-plus"></i>&nbsp;&nbsp;Tambah Barang</a>
         </div>
         <div class="col-md-6 ms-auto text-end pe-0">
             <a class="btn export shadow-none" href="/dashboard/export"><i class="bi bi-file-earmark-spreadsheet-fill"></i>&nbsp;&nbsp;Export</a>
         </div>
+        @else
+        <div class="col-md-6 ps-0">
+          <a class="btn export shadow-none" href="/dashboard/export"><i class="bi bi-file-earmark-spreadsheet-fill"></i>&nbsp;&nbsp;Export</a>
+        </div>
+        @endif
     </div>
 
     @if(session()->has('successAddItem'))
@@ -40,7 +46,9 @@
             <th scope="col">Harga Barang</th>
             <th scope="col">Kategori</th>
             <th scope="col">Ditambahkan Pada</th>
-            <th scope="col" class="aksi">Aksi</th>
+            @if(auth()->user()->isAdmin == 1 || auth()->user()->isOwner == 1)
+              <th scope="col" class="aksi">Aksi</th>
+            @endif
           </tr>
         </thead>
         <tbody>
@@ -51,6 +59,7 @@
             <td>Rp. {{ number_format($item->price) }}</td>
             <td>{{ $item->category->name }}</td>
             <td>{{ $item->created_at }}</td>
+            @if(auth()->user()->isAdmin == 1 || auth()->user()->isOwner == 1)
             <td>
               <a href="/dashboard/items/{{ $item->id }}/edit" class="badge bg-warning shadow-none"><i class="bi bi-pencil-square"></i> Edit</a>
                 <button class="badge bg-danger shadow-none" data-bs-toggle="modal" data-bs-target="#ModalAddItem{{ $item->id }}">
@@ -83,6 +92,7 @@
             </div>
           </div>
         </form>
+        @endif
         @endforeach
         </tbody>
       </table>

@@ -345,6 +345,14 @@ p.admin {
   font-weight: 500;
 }
 
+p.owner {
+  color: #FFFFFF;
+  background-color: var(--primary-color);
+  padding: 8px;
+  border-radius: .25rem;
+  font-weight: 500;
+}
+
 @media (max-width: 1200px) {
   h2.card-title {
     font-size: 25px !important;

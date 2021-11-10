@@ -15,9 +15,10 @@ class AdminController extends Controller
      */
     public function index()
     {
+        $getUser = User::all()->except(Auth::id());
         return view('dashboard.admin.admin', [
             'title' => 'Admin',
-            'users' => User::latest()->paginate(8)
+            'users' => $getUser
         ]);
     }
 

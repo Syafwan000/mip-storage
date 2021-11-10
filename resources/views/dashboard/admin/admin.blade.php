@@ -112,8 +112,4 @@
       @else
         <p class="text-center fs-4 none"><i class="bi bi-bar-chart-steps"></i>&nbsp;&nbsp;Tidak Ada Data</p>
       @endif
-
-      <div class="d-flex justify-content-end">
-        {{ $users->links() }}
-      </div>
 @endsection

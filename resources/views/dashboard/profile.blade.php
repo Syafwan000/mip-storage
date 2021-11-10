@@ -19,10 +19,14 @@
     </div>
     <label class="form-label">Status Admin</label>
     <div class="input-group mb-3">
-        @if($user->isAdmin == 0)
+        @if($user->isAdmin == 0 && $user->isOwner == 0)
             <p class="not-admin">{{ ($user->isAdmin == 0) ? 'Bukan Admin' : 'Admin' }}</p>
-        @else
+        @endif
+        @if($user->isAdmin == 1)
             <p class="admin">{{ ($user->isAdmin == 0) ? 'Bukan Admin' : 'Admin' }}</p>
+        @endif
+        @if($user->isOwner == 1)
+            <p class="owner">{{ ($user->isOwner == 1) ? 'Owner' : '' }}</p>
         @endif
     </div>
 @endsection
