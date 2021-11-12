@@ -16,6 +16,15 @@
         @endif
     </div>
 
+    <div class="search-form">
+      <form action="/dashboard/items">
+          <div class="input-group mb-4">
+            <input type="text" class="form-control search-form shadow-none" placeholder="Pencarian . . ." name="search" value="{{ request('search') }}" autocomplete="off">
+            <button class="btn search shadow-none px-4" type="submit"><i class="bi bi-search"></i></button>
+          </div>
+      </form>
+    </div>
+
     @if(session()->has('successAddItem'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <span class="notification"><i class="bi bi-bag-plus-fill"></i>&nbsp;&nbsp;{{ session('successAddItem') }}</span>
@@ -52,9 +61,9 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($items as $item)        
+          @foreach ($items as $key => $item)        
           <tr>
-            <th class="number">{{ $loop->iteration }}</th>
+            <th class="number">{{ $items->firstItem() + $key }}</th>
             <td>{{ $item->title }}</td>
             <td>Rp. {{ number_format($item->price) }}</td>
             <td>{{ $item->category->name }}</td>

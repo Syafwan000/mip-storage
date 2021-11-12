@@ -17,9 +17,16 @@ class ItemController extends Controller
      */
     public function index()
     {
+        $items = Items::latest();
+
+        if(request('search')) {
+            $items->where('title', 'like', '%' . request('search') . '%')
+                  ->orWhere('price', 'like', '%' . request('search') . '%');
+        }
+
         return view('dashboard.items', [
             'title' => 'Items',
-            'items' => Items::latest()->paginate(15)
+            'items' => $items->paginate(15)->withQueryString()
         ]);
     }
 

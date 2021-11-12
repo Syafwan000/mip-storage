@@ -10,6 +10,7 @@ class Items extends Model
     use HasFactory;
 
     protected $fillable = ['user_id', 'category_id', 'title', 'price'];
+    protected $with = ['category', 'user'];
 
     public function category()
     {

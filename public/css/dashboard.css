@@ -249,6 +249,16 @@ th.aksi {
   color: #FFFFFF;
 }
 
+input[type="text"] {
+  border: 1px solid var(--primary-color) !important;
+  height: 50px;
+}
+
+button.btn.search {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+}
+
 /* Create and Edit */
 
 .form-label {
